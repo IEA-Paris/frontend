@@ -1,0 +1,105 @@
+mutation updateProject($anonymous: Boolean, $content: String, $id: Int, $mode: Int, $reason: String, $rating: Int) {
+  updateProject(options: {anonymous: $anonymous, content: $content, id: $id, mode: $mode, rating: $rating, reason: $reason }) {
+    blocked {
+      at
+      authored
+      by {
+        entity
+        firstname
+        lastname
+      }
+      reason
+      content
+    }
+    commented {
+      at
+      authored
+      by {
+        entity
+        firstname
+        lastname
+      }
+      content
+    }
+    contact {
+      entity
+      firstname
+      lastname
+    }
+    continent
+    country
+    createdAt
+    date
+    description
+    edited {
+      at
+      authored
+      by {
+        firstname
+        lastname
+        entity
+      }
+      content
+    }
+    featured {
+      at
+      authored
+      by {
+        entity
+        firstname
+        lastname
+      }
+      content
+    }
+    field
+    followed
+    location
+    name
+    popularity
+    pubId
+    rating
+    requests {
+      at
+      authored
+      by {
+        entity
+        firstname
+        lastname
+      }
+      content
+    }
+    feedback {
+      at
+      authored
+      by {
+        entity
+        firstname
+        lastname
+      }
+    }
+    score
+    state
+    status
+    team {
+      entity
+      firstname
+      lastname
+    }
+    thematic
+    url
+    updatedAt
+    type
+    time
+    verified {
+      at
+      authored
+      by {
+        entity
+        firstname
+        lastname
+      }
+      content
+    }
+    zone
+  }
+}

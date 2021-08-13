@@ -1,0 +1,3 @@
+mutation updateMailing($options: UpdateMailingInput) {
+  updateMailing(options: $options)
+}

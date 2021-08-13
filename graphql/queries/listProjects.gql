@@ -1,0 +1,18 @@
+query listProjects($filters: listProjectsInput) {
+  listProjects(filters: $filters) {
+    projects{
+        updated
+        status
+        pubId
+        name
+        followed
+        feedback
+        entity
+        edited
+        createdAt
+        commented
+        requests
+    }
+    total
+  }
+}

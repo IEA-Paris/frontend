@@ -1,0 +1,24 @@
+
+query getUser {
+  getUser {
+    branch
+    email
+    profile {
+      country
+      entity
+      firstname
+      lastname
+      position
+    }
+    role
+    settings {
+      fields
+      frequency
+      newsletter
+      r_visible
+      thematics
+      types
+      visible
+    }
+  }
+}

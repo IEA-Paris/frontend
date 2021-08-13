@@ -1,0 +1,3 @@
+mutation inviteUser($options: UserInput) {
+  inviteUser(options: $options)
+}

@@ -1,0 +1,13 @@
+query listBranches {
+  listBranches {
+    id
+    isAdmin
+    isReferent
+    name
+    type
+    description,
+    logo,
+    url,
+    shortName
+  }
+}

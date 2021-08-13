@@ -1,0 +1,8 @@
+query listAllUsers {
+  listAllUsers {
+    users {
+      text
+      value
+    }
+  }
+}

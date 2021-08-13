@@ -1,0 +1,5 @@
+query Login($email: AWSEmail!, $password: String!) {
+  login(email: $email, password: $password) {
+    accessToken
+  }
+}

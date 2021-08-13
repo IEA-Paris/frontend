@@ -1,0 +1,20 @@
+mutation updateUser($options: UpdateUserInput) {
+  updateUser(options: $options) {
+    profile {
+      firstname
+      lastname
+      entity
+      position
+      country
+    }
+    settings {
+      fields
+      frequency
+      newsletter
+      r_visible
+      types
+      thematics
+      visible
+    }
+  }
+}

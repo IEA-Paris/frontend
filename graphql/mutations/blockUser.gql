@@ -1,0 +1,3 @@
+mutation blockUser($id: String) {
+  blockUser(id: $id)
+}

@@ -1,0 +1,3 @@
+mutation setFeatured($options: FeaturedInput) {
+  setFeatured(options: $options)
+}
