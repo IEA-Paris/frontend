@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import TopBar from '~/components/navigation/TopBara.vue'
+import TopBar from '~/components/navigation/TopBar.vue'
 export default {
   components: { TopBar },
   data() {
