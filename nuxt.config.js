@@ -97,7 +97,6 @@ export default {
     '@nuxtjs/composition-api/module',
     '@nuxtjs/html-validator',
     '@nuxt/image',
-    '@nuxtjs/style-resources',
     'nuxt-compress',
   ],
 
@@ -123,6 +122,8 @@ export default {
     '@nuxtjs/sentry',
     // https://github.com/nuxt-community/apollo-module
     '@nuxtjs/apollo',
+    // https://github.com/Developmint/nuxt-webfontloader
+    'nuxt-webfontloader',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -252,18 +253,16 @@ export default {
   // https://github.com/Developmint/nuxt-webfontloader
   webfontloader: {
     google: {
-      families: ['Petrona:500,700'], // Loads Lato font with weights 400 and 700
+      families: ['Merriweather', 'Libre Franklin'], // Loads Lato font with weights 400 and 700
     },
   },
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
   /*
    ** Sentry module configuration
    ** https://github.com/nuxt-community/sentry-module#options
    */
   sentry: {
     dsn: config.sentry_dsn || '',
-    config: {}, // Additional config
+    config: {}, // Additional configyarn dev
   },
   ackee: {
     server: 'https://ackee.paris-ias.io/',
@@ -302,6 +301,10 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: {
+      font: [{ family: 'Merriwater' }, { family: 'Libre Franklin' }],
+    },
     theme: config.theme,
   },
 

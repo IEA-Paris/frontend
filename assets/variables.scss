@@ -6,7 +6,6 @@
 $fortnightly-font-size: 16;
 $fortnightly-heading-font-style: italic;
 $fortnightly-primary-color: #6b38fb;
-
 // Preset variables
 $body-font-family: 'Libre Franklin', sans-serif;
 $border-radius-root: 0;
@@ -93,3 +92,23 @@ $material-light: (
   'chips': #ffffff,
 );
 $stepper-elevation: 0;
+.theme--light .display-4,
+.display-2,
+.title,
+.caption {
+  font-style: $fortnightly-heading-font-style;
+}
+.v-btn.v-btn--contained,
+.v-card {
+  box-shadow: none;
+}
+.v-chip.v-chip {
+  border-radius: 0;
+  border-style: solid;
+  border-width: thin;
+}
+.v-stepper.v-stepper--vertical .v-stepper__content {
+  border-left-color: transparent !important;
+  margin-bottom: 16px;
+  padding-bottom: 0;
+}
