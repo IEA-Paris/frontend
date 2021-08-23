@@ -121,13 +121,13 @@ export default {
     '@nuxtjs/robots',
     // https://ackee.nuxtjs.org/
     '@nuxtjs/ackee',
-    //https://sentry.nuxtjs.org/
+    // https://sentry.nuxtjs.org/
     '@nuxtjs/sentry',
     // https://github.com/nuxt-community/apollo-module
     '@nuxtjs/apollo',
     // https://github.com/Developmint/nuxt-webfontloader
     'nuxt-webfontloader',
-    //https://image.nuxtjs.org/getting-started/installation
+    // https://image.nuxtjs.org/getting-started/installation
     '@nuxt/image',
   ],
 
