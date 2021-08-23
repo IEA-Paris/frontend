@@ -127,6 +127,8 @@ export default {
     '@nuxtjs/apollo',
     // https://github.com/Developmint/nuxt-webfontloader
     'nuxt-webfontloader',
+    //https://image.nuxtjs.org/getting-started/installation
+    '@nuxt/image',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -158,6 +160,7 @@ export default {
       blogImage: 864,
     },
     domains: [
+      'picsum.photos',
       'strapi.nuxtjs.org',
       'tailwindcss.nuxtjs.org',
       'storybook.nuxtjs.org',
@@ -256,7 +259,7 @@ export default {
   // https://github.com/Developmint/nuxt-webfontloader
   webfontloader: {
     google: {
-      families: ['Merriweather', 'Libre Franklin'], // Loads Lato font with weights 400 and 700
+      families: ['Playfair Display', 'Open Sans:300'], // Loads Lato font with weights 400 and 700
     },
   },
   /*

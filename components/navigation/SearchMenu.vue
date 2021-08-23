@@ -23,7 +23,11 @@
                 style="transition: all 500ms ease 0s"
                 @click.native="$vuetify.goTo(0)"
               >
-                <v-img src="/logo_text_alt.svg" contain class="logo"></v-img
+                <v-img
+                  src="/logo_text_alt.svg"
+                  contain
+                  class="menu-logo"
+                ></v-img
               ></nuxt-link>
               <v-spacer></v-spacer>
               <v-btn icon x-large @click="open = false"
@@ -61,8 +65,8 @@ export default {
   methods: {},
 }
 </script>
-<style lang="scss">
-.logo {
+<style scoped>
+.menu-logo {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-property: color, background, text-shadow;
@@ -72,7 +76,7 @@ export default {
   margin-left: 40px;
   margin-bottom: 25px;
 }
-.v-app-bar--is-scrolled .logo {
+.v-app-bar--is-scrolled .menu-logo {
   position: relative;
   width: 250px !important;
   height: auto !important;
@@ -81,11 +85,5 @@ export default {
   transform: scale(0.9);
   margin-left: 40px;
   margin-bottom: 15px;
-}
-.menu {
-  margin-top: 15px;
-}
-.v-app-bar--is-scrolled .menu {
-  margin-top: 5px;
 }
 </style>

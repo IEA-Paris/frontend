@@ -1,5 +1,7 @@
 <template>
-  <div class="text-h5">{{ $t(text) }}</div>
+  <div class="my-12">
+    <span class="section-title text-h4 text-uppercase">{{ $t(text) }}</span>
+  </div>
 </template>
 <script>
 export default {
@@ -17,4 +19,8 @@ export default {
   methods: {},
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.section-title {
+  border-bottom: 5px solid black;
+}
+</style>

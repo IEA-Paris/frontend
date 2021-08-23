@@ -16,4 +16,13 @@ export default {
     { text: 'acommodations', path: '/apply/acommodations' },
     { text: 'commitments', path: '/apply/commitments' },
   ],
+  footer: [
+    { text: 'tos', path: '/tos' },
+    { text: 'contact', path: '/contact' },
+    { text: 'pressroom', path: '/pressroom' },
+    { text: 'newsletter', path: '/tos' },
+    { text: 'about', path: '/tos' },
+    { text: 'privacy_policy', path: '/tos' },
+    { text: 'support', path: '/support' },
+  ],
 }
