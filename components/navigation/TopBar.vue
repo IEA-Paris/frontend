@@ -1,23 +1,21 @@
 <template>
-  <v-app-bar
-    color="white"
-    clipped
-    flat
-    app
-    prominent
-    style="border-top: solid 0.25rem black !important"
-    hide-on-scroll
-    height="168px"
-  >
+  <v-app-bar id="main-app-bar" color="white" clipped flat app prominent hide-on-scroll height="168px">
     <div class="d-flex flex-column flex-grow-1">
       <div class="d-flex flex-grow-1 align-center">
-        <nuxt-link :to="localePath('/')" style="transition: all 500ms ease 0s" @click.native="$vuetify.goTo(0)">
-          <v-img src="/logo_text.svg" contain class="logo"></v-img>
+        <nuxt-link
+          :to="localePath('/')"
+          style="transition: all 500ms ease 0s"
+          class="d-flex align-center logo-text"
+          @click.native="$vuetify.goTo(0)"
+        >
+          <span class="logo-1">PARIS</span>
+          &nbsp;
+          <span class="logo-2">IAS</span>
         </nuxt-link>
         <v-spacer></v-spacer>
         <v-menu offset-y open-on-hover bottom>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn v-bind="attrs" v-on="on" class="text-button" text outlined>
+          <template #activator="{ on, attrs }">
+            <v-btn v-bind="attrs" class="text-button" text outlined v-on="on">
               {{ $i18n.locale.toUpperCase() }}
               <v-icon right>mdi-chevron-down</v-icon>
             </v-btn>
@@ -40,10 +38,10 @@
         <MainMenu />
       </div>
       <v-divider></v-divider>
-      <div class="d-flex ml-6 menu" transition="v-expand-transition" v-if="$vuetify.breakpoint.smAndUp">
+      <div v-if="$vuetify.breakpoint.smAndUp" class="d-flex ml-6 menu" transition="v-expand-transition">
         <v-menu offset-y open-on-hover bottom>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn v-bind="attrs" v-on="on" text nuxt :to="localePath('/institute')">
+          <template #activator="{ on, attrs }">
+            <v-btn v-bind="attrs" text nuxt :to="localePath('/institute')" v-on="on">
               {{ $t('institute') }}
               <v-icon right>mdi-chevron-down</v-icon>
             </v-btn>
@@ -56,7 +54,7 @@
         </v-menu>
         <v-menu offset-y open-on-hover bottom>
           <template #activator="{ on, attrs }">
-            <v-btn text v-bind="attrs" v-on="on" nuxt :to="localePath('/research')">
+            <v-btn text v-bind="attrs" :to="localePath('/research')" nuxt v-on="on">
               {{ $t('research') }}
               <v-icon right>mdi-chevron-down</v-icon>
             </v-btn>
@@ -71,7 +69,7 @@
         <v-btn text nuxt to="/library">{{ $t('library') }}</v-btn>
         <v-menu offset-y open-on-hover bottom>
           <template #activator="{ on, attrs }">
-            <v-btn v-bind="attrs" v-on="on" text>
+            <v-btn v-bind="attrs" text v-on="on">
               {{ $t('apply') }}
               <v-icon right>mdi-chevron-down</v-icon>
             </v-btn>
@@ -101,6 +99,12 @@ export default {
 }
 </script>
 <style lang="scss">
+#main-app-bar {
+  border-top: solid 0.8rem black !important;
+}
+#main-app-bar.v-app-bar--is-scrolled {
+  border-top: solid 0.4rem black !important;
+}
 .logo {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
@@ -112,9 +116,9 @@ export default {
   margin-left: 40px;
   margin-bottom: 25px;
 }
-.v-app-bar--is-scrolled .logo {
+.v-app-bar--is-scrolled .logo-1 .logo-2 {
   position: relative;
-  max-width: 250px !important;
+  max-width: 150px !important;
   height: auto !important;
   transition-delay: 1s;
   -webkit-transform: translateZ(0);
@@ -127,5 +131,48 @@ export default {
 }
 .v-app-bar--is-scrolled .menu {
   margin-top: 5px;
+}
+.logo-text,
+.logo-text:link,
+.logo-text:visited,
+.logo-text:hover,
+.logo-text:active,
+.logo-text {
+  line-height: 6rem;
+  color: black;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.logo-1 {
+  font-size: 6rem;
+  font-weight: 700;
+  font-family: 'Bodoni Moda';
+  margin-left: 2rem;
+  letter-spacing: 0.2px;
+}
+.logo-2 {
+  font-size: 6.3rem;
+  font-family: 'Roboto';
+  font-weight: 100;
+}
+.v-app-bar--is-scrolled .logo-text {
+  line-height: 3rem;
+  color: black;
+  text-decoration: none;
+  margin-top: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+.v-app-bar--is-scrolled .logo-1 {
+  font-size: 3rem !important;
+  font-weight: 700;
+  font-family: 'Bodoni Moda';
+  margin-left: 2rem;
+  letter-spacing: 0.2px;
+}
+.v-app-bar--is-scrolled .logo-2 {
+  font-size: 3.2rem !important;
+  font-family: 'Roboto';
+  font-weight: 100;
 }
 </style>

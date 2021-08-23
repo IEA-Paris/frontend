@@ -1,23 +1,30 @@
 <template>
   <v-dialog v-model="open" fullscreen hide-overlay transition="none">
     <!-- CLOSE BTN -->
-    <template v-slot:activator="{ on, attrs }">
-      <v-btn v-bind="attrs" v-on="on" icon x-large class=""><v-icon>mdi-menu</v-icon></v-btn>
+    <template #activator="{ on, attrs }">
+      <v-btn v-bind="attrs" icon x-large class="" v-on="on"><v-icon>mdi-menu</v-icon></v-btn>
     </template>
     <!-- APP BAR WITH LOGO -->
     <v-card dark color="black">
       <v-app-bar color="transparent" clipped flat prominent hide-on-scroll height="168px">
         <div class="d-flex flex-column flex-grow-1">
           <div class="d-flex flex-grow-1 align-center">
-            <nuxt-link :to="localePath('/')" style="transition: all 500ms ease 0s" @click.native="$vuetify.goTo(0)">
-              <v-img src="/logo_text_alt.svg" contain class="menu-logo"></v-img>
+            <nuxt-link
+              :to="localePath('/')"
+              style="transition: all 500ms ease 0s"
+              class="menu-logo-text"
+              @click.native="$vuetify.goTo(0)"
+            >
+              <span class="menu-logo-1">PARIS</span>
+              &nbsp;
+              <span class="menu-logo-2">IAS</span>
             </nuxt-link>
             <v-spacer></v-spacer>
             <v-btn icon x-large @click="open = false"><v-icon>mdi-close</v-icon></v-btn>
           </div>
         </div>
       </v-app-bar>
-      <v-row>
+      <v-row class="ml-2">
         <v-col cols="12" md="4" :order="$vuetify.breakpoint.smAndDown ? 'last' : 'first'">
           <!-- SMALL PAGES LINKS (FOOTER) -->
           <div :class="{ 'ml-6': $vuetify.breakpoint.mdAndUp }">
@@ -25,7 +32,7 @@
             <v-list dark color="black">
               <v-list-item v-for="(item, i) in footer" :key="i" :to="item.path" @click="open = false">
                 <v-list-item-content>
-                  <v-list-item-title v-text="$t(item.text)" class="text-uppercase text-button mb-6"></v-list-item-title>
+                  <v-list-item-title class="text-uppercase text-button mb-6" v-text="$t(item.text)"></v-list-item-title>
                   <v-divider v-if="i < Object.keys(footer).length - 1"></v-divider>
                 </v-list-item-content>
               </v-list-item>
@@ -38,7 +45,7 @@
           <!-- INSTITUTE -->
           <v-list dark color="black">
             <v-list-group :value="$route.name.startsWith('institute') ? true : false">
-              <template v-slot:activator>
+              <template #activator>
                 <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6">{{ $t('institute') }}</v-list-item-title>
               </template>
               <v-list-item
@@ -49,13 +56,13 @@
                 class="ml-3"
                 @click="open = false"
               >
-                <v-list-item-title v-text="$t(item.text)" class="text-uppercase text-h5 mt-3 mb-6"></v-list-item-title>
+                <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6" v-text="$t(item.text)"></v-list-item-title>
               </v-list-item>
             </v-list-group>
             <v-divider></v-divider>
             <!-- RESEARCH -->
             <v-list-group :value="$route.name.startsWith('research') ? true : false">
-              <template v-slot:activator>
+              <template #activator>
                 <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6">{{ $t('research') }}</v-list-item-title>
               </template>
               <v-list-item
@@ -66,7 +73,7 @@
                 class="ml-3"
                 @click="open = false"
               >
-                <v-list-item-title v-text="$t(item.text)" class="text-uppercase text-h5 mt-3 mb-6"></v-list-item-title>
+                <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6" v-text="$t(item.text)"></v-list-item-title>
               </v-list-item>
             </v-list-group>
             <v-divider></v-divider>
@@ -82,11 +89,11 @@
             <v-divider></v-divider>
             <!-- APPLY -->
             <v-list-group :value="$route.name.startsWith('apply') ? true : false">
-              <template v-slot:activator>
+              <template #activator>
                 <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6">{{ $t('apply') }}</v-list-item-title>
               </template>
               <v-list-item v-for="(item, i) in apply" :key="i" nuxt :to="item.path" class="ml-3" @click="open = false">
-                <v-list-item-title v-text="$t(item.text)" class="text-uppercase text-h5 mt-3 mb-6"></v-list-item-title>
+                <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6" v-text="$t(item.text)"></v-list-item-title>
               </v-list-item>
             </v-list-group>
           </v-list>
@@ -163,5 +170,48 @@ export default {
 }
 .v-app-bar--is-scrolled .menu {
   margin-top: 5px;
+}
+.menu-logo-text,
+.menu-logo-text:link,
+.menu-logo-text:visited,
+.menu-logo-text:hover,
+.menu-logo-text:active,
+.menu-logo-text {
+  line-height: 6rem;
+  color: white;
+  text-decoration: none;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+}
+.menu-logo-1 {
+  font-size: 6rem;
+  font-weight: 700;
+  font-family: 'Bodoni Moda';
+  margin-left: 2rem;
+  letter-spacing: 0.2px;
+}
+.menu-logo-2 {
+  font-size: 6.3rem;
+  font-family: 'Roboto';
+  font-weight: 100;
+}
+.v-app-bar--is-scrolled .menu-logo-text {
+  line-height: 3rem;
+  color: white;
+  text-decoration: none;
+  margin-top: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+.v-app-bar--is-scrolled .menu-logo-1 {
+  font-size: 3rem !important;
+  font-weight: 700;
+  font-family: 'Bodoni Moda';
+  margin-left: 2rem;
+  letter-spacing: 0.2px;
+}
+.v-app-bar--is-scrolled .menu-logo-2 {
+  font-size: 3.2rem !important;
+  font-family: 'Roboto';
+  font-weight: 100;
 }
 </style>

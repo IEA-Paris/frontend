@@ -259,7 +259,7 @@ export default {
   // https://github.com/Developmint/nuxt-webfontloader
   webfontloader: {
     google: {
-      families: ['Playfair Display', 'Open Sans:300'], // Loads Lato font with weights 400 and 700
+      families: ['Bodoni Moda', 'Open Sans', 'Roboto:100,300,400,500,700'], // Loads Lato font with weights 400 and 700
     },
   },
   /*
