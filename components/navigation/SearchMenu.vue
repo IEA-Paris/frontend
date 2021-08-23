@@ -1,38 +1,18 @@
 <template>
   <v-dialog v-model="open" fullscreen hide-overlay>
     <template v-slot:activator="{ on, attrs }">
-      <v-btn v-bind="attrs" v-on="on" icon x-large
-        ><v-icon>mdi-magnify</v-icon></v-btn
-      >
+      <v-btn v-bind="attrs" v-on="on" icon x-large><v-icon>mdi-magnify</v-icon></v-btn>
     </template>
     <v-card dark>
       <template>
-        <v-app-bar
-          color="transparent"
-          clipped
-          flat
-          app
-          prominent
-          hide-on-scroll
-          height="168px"
-        >
+        <v-app-bar color="transparent" clipped flat app prominent hide-on-scroll height="168px">
           <div class="d-flex flex-column flex-grow-1">
             <div class="d-flex flex-grow-1 align-center">
-              <nuxt-link
-                :to="localePath('/')"
-                style="transition: all 500ms ease 0s"
-                @click.native="$vuetify.goTo(0)"
-              >
-                <v-img
-                  src="/logo_text_alt.svg"
-                  contain
-                  class="menu-logo"
-                ></v-img
-              ></nuxt-link>
+              <nuxt-link :to="localePath('/')" style="transition: all 500ms ease 0s" @click.native="$vuetify.goTo(0)">
+                <v-img src="/logo_text_alt.svg" contain class="menu-logo"></v-img>
+              </nuxt-link>
               <v-spacer></v-spacer>
-              <v-btn icon x-large @click="open = false"
-                ><v-icon>mdi-close</v-icon></v-btn
-              >
+              <v-btn icon x-large @click="open = false"><v-icon>mdi-close</v-icon></v-btn>
             </div>
             <v-divider></v-divider>
             <v-row justify="center">

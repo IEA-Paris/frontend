@@ -41,6 +41,7 @@ export default class ApolloScheme {
 
   fetchUser() {
     if (!this.check()) {
+      // eslint-disable-next-line prefer-promise-reject-errors
       return Promise.reject(false)
     }
 
