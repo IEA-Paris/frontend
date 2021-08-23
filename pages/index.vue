@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Latest />
-    <Events />
-    <Library />
+    <Section title="latest" />
+    <Section title="events" />
+    <Section title="library" />
   </div>
 </template>
 <script>

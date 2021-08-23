@@ -36,5 +36,8 @@
   "privacy": "Privacy policy",
   "invalid-e-mail": "Invalid e-mail.",
   "subscribe-to-our-newsletter": "Subscribe to our newsletter",
-  "email": "Email"
+  "email": "Email",
+  "event": "Event",
+  "news": "News",
+  "resource": "Resource"
 }

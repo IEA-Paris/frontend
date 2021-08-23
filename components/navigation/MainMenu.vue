@@ -9,12 +9,7 @@
       <v-app-bar color="transparent" clipped flat prominent hide-on-scroll height="168px">
         <div class="d-flex flex-column flex-grow-1">
           <div class="d-flex flex-grow-1 align-center">
-            <nuxt-link
-              :to="localePath('/')"
-              style="transition: all 500ms ease 0s"
-              class="menu-logo-text"
-              @click.native="$vuetify.goTo(0)"
-            >
+            <nuxt-link :to="localePath('/')" style="transition: all 500ms ease 0s" class="menu-logo-text">
               <span class="menu-logo-1">PARIS</span>
               &nbsp;
               <span class="menu-logo-2">IAS</span>

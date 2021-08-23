@@ -2,7 +2,6 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import env from '../config.js'
 
 export default ({ app }) => {
-  console.log('app: ', app)
   return {
     httpEndpoint: env.graphqlEndpoint,
     httpLinkOptions: {

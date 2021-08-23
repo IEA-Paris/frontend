@@ -1,7 +1,9 @@
 <template>
-  <div class="my-12">
-    <span class="section-title text-h4 text-uppercase">{{ $t(text) }}</span>
-  </div>
+  <v-col cols="12" class="transition-swing">
+    <div class="my-6">
+      <span class="section-title text-h4 text-uppercase">{{ $t(text) }}</span>
+    </div>
+  </v-col>
 </template>
 <script>
 export default {

@@ -1,10 +1,8 @@
 <template>
   <v-app>
     <TopBar />
-    <v-main>
-      <v-container :class="{ 'mx-11': $vuetify.breakpoint.mdAndDown }" class="mt-12">
-        <Nuxt />
-      </v-container>
+    <v-main style="padding-bottom: 5rem">
+      <Nuxt />
     </v-main>
     <Footer />
   </v-app>
@@ -13,6 +11,7 @@
 <script>
 export default {
   components: {},
+  scrollToTop: true,
   data() {
     return {}
   },

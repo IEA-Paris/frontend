@@ -1,30 +1,42 @@
 <template>
-  <div>
+  <div class="frame">
+    <div class="overlay">
+      <v-chip
+        v-if="category"
+        :color="['primary', 'secondary', 'success'][['event', 'news', 'resource'].indexOf(category)]"
+        label
+      >
+        {{ $t(category) }}
+      </v-chip>
+      <span id="caption-content">
+        <slot name="caption"></slot>
+        <br />
+      </span>
+      <span id="caption-author">
+        <slot name="author"></slot>
+      </span>
+    </div>
     <v-img
+      :aspect-ratio="ratio"
       :lazy-src="$img(src, { width: 10, quality: 70 })"
       :src="$img(src, { height, quality: 70 })"
       :srcset="_srcset.srcset"
-      :height="height"
       :sizes="_srcset.size"
-      class="d-flex align-end justify-end text-right pb-6 pr-6"
-    >
-      <div id="caption">
-        <a id="caption-content" class="animated">
-          <slot name="caption"></slot>
-        </a>
-      </div>
-
-      <slot name="overlay" class="overlay"></slot>
-    </v-img>
+    ></v-img>
   </div>
 </template>
 <script>
 export default {
   props: {
+    ratio: { type: Number, default: 16 / 9 },
     height: { type: [Number, String], default: 500 },
     src: {
       type: String,
       default: '/img/header-bg.jpg',
+    },
+    category: {
+      type: String,
+      default: 'gregrze',
     },
   },
   computed: {
@@ -42,30 +54,71 @@ export default {
 }
 </script>
 <style scoped>
-.v-image__image {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+.frame {
+  overflow: hidden;
 }
-.v-image .v-image__image:hover {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  z-index: 2;
+  text-align: right;
+  padding-bottom: 2rem;
+  padding-right: 1.6rem;
 }
-#caption {
-  font-size: 1.4rem;
-  line-height: 3rem;
-  text-decoration: none;
-  text-shadow: 1px 1px 0 alpha(white, 0.4);
+.v-image {
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  z-index: 1;
 }
-#caption-content {
-  padding: 12px;
-  color: white;
-  background-image: linear-gradient(to left, black 100%, white 100%);
+.overlay:hover + .v-image {
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+#caption-content,
+#caption-author {
   background-position: 0;
   background-size: 200%;
-  transition: all 0.4s ease-in;
+  transition: all 0.6s ease-in;
+  text-align: right;
+  text-decoration: none;
+  max-width: 66%;
+}
+#caption-content {
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 alpha(white, 0.6);
+  padding: 12px;
+  color: black;
+  background-image: linear-gradient(to left, white 100%, black 100%);
   text-transform: uppercase;
 }
-.v-image:hover #caption-content {
+#caption-author {
+  padding: 4px;
+  color: white;
+  background-image: linear-gradient(to left, black 100%, white 100%);
+  font-size: 0.8rem;
+  line-height: 2.2rem;
+  text-shadow: 1px 1px 0 alpha(black, 0.6);
+}
+.overlay:hover #caption-content {
+  color: white;
+  background-position: 200%;
+  background-color: black;
+  line-height: 2.2rem;
+  font-size: 1.3rem;
+}
+.overlay:hover #caption-author {
   color: black;
   background-position: 200%;
   background-color: white;

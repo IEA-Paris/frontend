@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar id="main-app-bar" color="white" clipped flat app prominent hide-on-scroll height="168px">
+  <v-app-bar id="main-app-bar" color="white" clipped flat app hide-on-scroll height="168px">
     <div class="d-flex flex-column flex-grow-1">
       <div class="d-flex flex-grow-1 align-center">
         <nuxt-link
@@ -9,7 +9,7 @@
           @click.native="$vuetify.goTo(0)"
         >
           <span class="logo-1">PARIS</span>
-          &nbsp;
+          &nbsp;&nbsp;
           <span class="logo-2">IAS</span>
         </nuxt-link>
         <v-spacer></v-spacer>
@@ -152,7 +152,7 @@ export default {
   letter-spacing: 0.2px;
 }
 .logo-2 {
-  font-size: 6.3rem;
+  font-size: 6.5rem;
   font-family: 'Roboto';
   font-weight: 100;
 }

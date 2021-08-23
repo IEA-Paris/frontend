@@ -1,5 +1,5 @@
 <template>
-  <v-footer absolute app dark color="black">
+  <v-footer app dark color="black" style="position: relative">
     <v-container>
       <v-row justify="center" no-gutters>
         <v-col cols="12" lg="10">
@@ -88,8 +88,8 @@
                     outlined
                     color="grey"
                     class="mx-3"
-                    v-on="on"
                     small
+                    v-on="on"
                   >
                     <v-icon color="white">mdi-{{ item.icon }}</v-icon>
                   </v-btn>
