@@ -12,8 +12,8 @@ export default {
   ],
   apply: [
     { text: 'calls', path: '/apply/calls' },
-    { text: 'selection', path: '/apply/fellows' },
-    { text: 'acommodations', path: '/apply/acommodations' },
+    { text: 'selection', path: '/apply/selection' },
+    { text: 'acommodations', path: '/apply/accommodations' },
     { text: 'commitments', path: '/apply/commitments' },
   ],
   footer: [

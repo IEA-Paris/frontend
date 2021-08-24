@@ -1,4 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
 import config from './config.js'
 
 export default {
@@ -59,9 +58,7 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  router: {
-    base: '/frontend/',
-  },
+
   server: {
     port: 3000, // default: 3000
     host: '0.0.0.0', //  default: localhost
@@ -72,11 +69,11 @@ export default {
     height: '10px',
     duration: 500,
   }, */ // Customize the loading indicator (https://nuxtjs.org/api/configuration-loading-indicator)
-  loadingIndicator: {
+  /*   loadingIndicator: {
     name: '~/assets/loader.html',
     color: config.theme.themes.light.primary,
     background: config.theme.themes.light.secondary,
-  },
+  }, */
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -103,10 +100,10 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     // https://composition-api.nuxtjs.org
-    '@nuxtjs/composition-api/module',
+    /*  '@nuxtjs/composition-api/module', */
     /* '@nuxtjs/html-validator', */
     '@nuxt/image',
-    'nuxt-compress',
+    /*   'nuxt-compress', */
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -133,8 +130,7 @@ export default {
     '@nuxtjs/apollo',
     // https://github.com/Developmint/nuxt-webfontloader
     'nuxt-webfontloader',
-    // https://image.nuxtjs.org/getting-started/installation
-    '@nuxt/image',
+
     // https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
   ],
@@ -314,6 +310,6 @@ export default {
   generate: {
     fallback: true,
     // choose to suit your project
-    interval: 2000,
+    /* interval: 2000, */
   },
 }

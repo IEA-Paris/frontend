@@ -138,16 +138,15 @@ export default {
 }
 </script>
 <style scoped>
-.v-app-bar--is-scrolled .menu-logo {
+.v-app-bar--is-scrolled .menu-logo-text {
   position: relative;
-  width: 250px !important;
+  max-width: 150px !important;
   height: auto !important;
   transition-delay: 1s;
   -webkit-transform: translateZ(0);
   transform: scale(0.9);
   margin-left: 40px;
   margin-bottom: 15px;
-  margin-top: 5px;
 }
 .menu {
   margin-top: 15px;
@@ -161,10 +160,21 @@ export default {
 .menu-logo-text:hover,
 .menu-logo-text:active,
 .menu-logo-text {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: color, background, text-shadow;
+  transition: all 0.5s ease;
+  transform-origin: left top;
+  max-width: 600px !important;
+  width: 100%;
+  margin-left: 40px;
+  margin-bottom: 25px;
   line-height: 6rem;
   color: white;
   text-decoration: none;
-  transition: all 500ms ease 0s;
+  margin-top: 1.4rem;
+  margin-bottom: 1.8rem;
+  margin-left: 2.4rem;
 }
 .menu-logo-1 {
   font-size: 6rem;
@@ -188,7 +198,6 @@ export default {
   font-size: 3rem !important;
   font-weight: 700;
   font-family: 'Bodoni Moda';
-  margin-left: 2rem;
   letter-spacing: 0.2px;
 }
 .v-app-bar--is-scrolled .menu-logo-2 {

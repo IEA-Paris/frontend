@@ -6,7 +6,7 @@
         <v-col cols="12" md="6" class="transition-swing">
           <v-card style="position: sticky">
             <OptimizedImage :src="'https://picsum.photos/600?random=' + Math.random()" height="90vh">
-              <template v-slot:caption>THIS is my text as a caption over the image</template>
+              <template #caption>THIS is my text as a caption over the image</template>
             </OptimizedImage>
           </v-card>
         </v-col>

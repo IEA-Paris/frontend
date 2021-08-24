@@ -106,19 +106,7 @@ export default {
   border-top: solid 0.4rem #000 !important;
 }
 
-.logo {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-property: color, background, text-shadow;
-  transition: all 0.5s ease;
-  transform-origin: left top;
-  max-width: 600px !important;
-  width: 100%;
-  margin-left: 40px;
-  margin-bottom: 25px;
-}
-
-.v-app-bar--is-scrolled .logo-1 .logo-2 {
+.v-app-bar--is-scrolled .logo-text {
   position: relative;
   max-width: 150px !important;
   height: auto !important;
@@ -143,18 +131,27 @@ export default {
 .logo-text:hover,
 .logo-text:active,
 .logo-text {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: color, background, text-shadow;
+  transition: all 0.5s ease;
+  transform-origin: left top;
+  max-width: 600px !important;
+  width: 100%;
+  margin-left: 40px;
+  margin-bottom: 25px;
   line-height: 6rem;
   color: #000;
   text-decoration: none;
   margin-top: 1.8rem;
   margin-bottom: 1.4rem;
+  margin-left: 2.4rem;
 }
 
 .logo-1 {
   font-size: 6rem;
   font-weight: 700;
   font-family: 'Bodoni Moda';
-  margin-left: 2rem;
   letter-spacing: 0.2px;
 }
 
@@ -176,7 +173,6 @@ export default {
   font-size: 3rem !important;
   font-weight: 700;
   font-family: 'Bodoni Moda';
-  margin-left: 2rem;
   letter-spacing: 0.2px;
 }
 

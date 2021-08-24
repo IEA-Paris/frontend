@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <Section title="latest" />
+  </div>
 </template>
 <script>
 export default {
