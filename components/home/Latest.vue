@@ -35,7 +35,7 @@ export default {
   mounted() {},
   methods: {
     onScroll() {
-      this.scrolled = process.client ? window.pageYOffset > 0 : false
+      this.scrolled = window.pageYOffset > 0
     },
   },
 }
