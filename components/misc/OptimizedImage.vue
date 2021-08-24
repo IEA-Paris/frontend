@@ -1,20 +1,26 @@
 <template>
   <div class="frame">
     <div class="overlay">
-      <v-chip
-        v-if="category"
-        :color="['primary', 'secondary', 'success'][['event', 'news', 'resource'].indexOf(category)]"
-        label
-      >
-        {{ $t(category) }}
-      </v-chip>
-      <span id="caption-content">
-        <slot name="caption"></slot>
-        <br />
-      </span>
-      <span id="caption-author">
-        <slot name="author"></slot>
-      </span>
+      <div class="top">
+        <div class="d-flex">
+          <v-chip v-for="(tag, index) in tags" :key="index" :color="tag.color" label>
+            {{ $t(tag.text) }}
+          </v-chip>
+        </div>
+
+        <span id="caption-content">
+          <slot name="caption"></slot>
+          <br />
+        </span>
+        <span id="caption-author">
+          <slot name="author"></slot>
+        </span>
+      </div>
+      <div class="bottom">
+        <span v-if="tags.find((tag) => tag.text === 'event')" id="caption-date">
+          <slot name="date"></slot>
+        </span>
+      </div>
     </div>
     <v-img
       :aspect-ratio="ratio"
@@ -22,6 +28,7 @@
       :src="$img(src, { height, quality: 70 })"
       :srcset="_srcset.srcset"
       :sizes="_srcset.size"
+      :class="{ expanded: expanded }"
     ></v-img>
   </div>
 </template>
@@ -34,9 +41,13 @@ export default {
       type: String,
       default: '/img/header-bg.jpg',
     },
-    category: {
-      type: String,
-      default: 'gregrze',
+    tags: {
+      type: Array,
+      default: () => [],
+    },
+    expanded: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -65,13 +76,19 @@ export default {
   bottom: 0;
   display: flex;
   flex-direction: column;
+  z-index: 2;
+  padding-bottom: 2rem;
+  padding-right: 1.9rem;
+  justify-content: space-between;
+}
+.top {
+  display: flex;
+  flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
-  z-index: 2;
   text-align: right;
-  padding-bottom: 2rem;
-  padding-right: 1.6rem;
 }
+
 .v-image {
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
@@ -83,9 +100,11 @@ export default {
   -webkit-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
+  opacity: 0.6;
 }
 #caption-content,
-#caption-author {
+#caption-author,
+#caption-date {
   background-position: 0;
   background-size: 200%;
   transition: all 0.6s ease-in;
@@ -122,5 +141,16 @@ export default {
   color: black;
   background-position: 200%;
   background-color: white;
+}
+#caption-date {
+  padding: 4px;
+  color: black;
+  background-image: linear-gradient(to left, white 100%, black 100%);
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+  text-shadow: 1px 1px 0 alpha(black, 0.6);
+}
+.expanded .v-image {
+  padding-top: 24px !important;
 }
 </style>

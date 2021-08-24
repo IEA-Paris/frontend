@@ -2,20 +2,20 @@
   <v-dialog v-model="open" fullscreen hide-overlay transition="none">
     <!-- CLOSE BTN -->
     <template #activator="{ on, attrs }">
-      <v-btn v-bind="attrs" icon x-large class="" v-on="on"><v-icon>mdi-menu</v-icon></v-btn>
+      <v-btn v-bind="attrs" icon x-large class="ma-2" v-on="on"><v-icon>mdi-menu</v-icon></v-btn>
     </template>
     <!-- APP BAR WITH LOGO -->
     <v-card dark color="black">
-      <v-app-bar color="transparent" clipped flat prominent hide-on-scroll height="168px">
+      <v-app-bar color="transparent" clipped flat hide-on-scroll height="147px">
         <div class="d-flex flex-column flex-grow-1">
           <div class="d-flex flex-grow-1 align-center">
-            <nuxt-link :to="localePath('/')" style="transition: all 500ms ease 0s" class="menu-logo-text">
+            <nuxt-link :to="localePath('/')" class="d-flex align-center menu-logo-text" @click.native="open = false">
               <span class="menu-logo-1">PARIS</span>
-              &nbsp;
+              &nbsp;&nbsp;
               <span class="menu-logo-2">IAS</span>
             </nuxt-link>
             <v-spacer></v-spacer>
-            <v-btn icon x-large @click="open = false"><v-icon>mdi-close</v-icon></v-btn>
+            <v-btn icon x-large class="ma-2 mr-4 mb-4" @click="open = false"><v-icon>mdi-close</v-icon></v-btn>
           </div>
         </div>
       </v-app-bar>
@@ -138,17 +138,6 @@ export default {
 }
 </script>
 <style scoped>
-.menu-logo {
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-property: color, background, text-shadow;
-  transition: all 0.5s ease;
-  transform-origin: left top;
-  width: 600px !important;
-  margin-left: 40px;
-  margin-bottom: 25px;
-  margin-top: 5px;
-}
 .v-app-bar--is-scrolled .menu-logo {
   position: relative;
   width: 250px !important;
@@ -175,14 +164,12 @@ export default {
   line-height: 6rem;
   color: white;
   text-decoration: none;
-  margin-top: 2rem;
-  margin-bottom: 1.2rem;
+  transition: all 500ms ease 0s;
 }
 .menu-logo-1 {
   font-size: 6rem;
   font-weight: 700;
   font-family: 'Bodoni Moda';
-  margin-left: 2rem;
   letter-spacing: 0.2px;
 }
 .menu-logo-2 {

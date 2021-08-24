@@ -34,7 +34,6 @@
           </v-list>
         </v-menu>
 
-        <SearchMenu />
         <MainMenu />
       </div>
       <v-divider></v-divider>
@@ -100,11 +99,13 @@ export default {
 </script>
 <style lang="scss">
 #main-app-bar {
-  border-top: solid 0.8rem black !important;
+  border-top: solid 0.8rem #000 !important;
 }
+
 #main-app-bar.v-app-bar--is-scrolled {
-  border-top: solid 0.4rem black !important;
+  border-top: solid 0.4rem #000 !important;
 }
+
 .logo {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
@@ -116,6 +117,7 @@ export default {
   margin-left: 40px;
   margin-bottom: 25px;
 }
+
 .v-app-bar--is-scrolled .logo-1 .logo-2 {
   position: relative;
   max-width: 150px !important;
@@ -126,12 +128,15 @@ export default {
   margin-left: 40px;
   margin-bottom: 15px;
 }
+
 .menu {
   margin-top: 15px;
 }
+
 .v-app-bar--is-scrolled .menu {
   margin-top: 5px;
 }
+
 .logo-text,
 .logo-text:link,
 .logo-text:visited,
@@ -139,11 +144,12 @@ export default {
 .logo-text:active,
 .logo-text {
   line-height: 6rem;
-  color: black;
+  color: #000;
   text-decoration: none;
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
+  margin-top: 1.8rem;
+  margin-bottom: 1.4rem;
 }
+
 .logo-1 {
   font-size: 6rem;
   font-weight: 700;
@@ -151,18 +157,21 @@ export default {
   margin-left: 2rem;
   letter-spacing: 0.2px;
 }
+
 .logo-2 {
   font-size: 6.5rem;
   font-family: 'Roboto';
   font-weight: 100;
 }
+
 .v-app-bar--is-scrolled .logo-text {
   line-height: 3rem;
-  color: black;
+  color: #000;
   text-decoration: none;
   margin-top: 0.6rem;
   margin-bottom: 1.2rem;
 }
+
 .v-app-bar--is-scrolled .logo-1 {
   font-size: 3rem !important;
   font-weight: 700;
@@ -170,6 +179,7 @@ export default {
   margin-left: 2rem;
   letter-spacing: 0.2px;
 }
+
 .v-app-bar--is-scrolled .logo-2 {
   font-size: 3.2rem !important;
   font-family: 'Roboto';

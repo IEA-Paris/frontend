@@ -39,5 +39,6 @@
   "email": "Email",
   "event": "Event",
   "news": "News",
-  "resource": "Resource"
+  "resource": "Resource",
+  "subscribe": "Subscribe"
 }

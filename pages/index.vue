@@ -1,7 +1,8 @@
 <template>
   <div>
     <Section title="latest" />
-    <Section title="events" />
+    <Section title="events" alt />
+    <Section title="research" />
     <Section title="library" />
   </div>
 </template>

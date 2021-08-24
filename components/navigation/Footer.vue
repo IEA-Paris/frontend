@@ -64,6 +64,7 @@
             </v-col>
             <v-col cols="12" sm="4">
               <div class="overline">{{ $t('subscribe-to-our-newsletter') }}</div>
+
               <div class="d-flex">
                 <v-text-field
                   v-model="email"
@@ -72,8 +73,10 @@
                   outlined
                   filled
                   dense
+                  large
+                  height="44"
                 ></v-text-field>
-                <v-btn outlined>Subscribe</v-btn>
+                <v-btn outlined large>{{ $t('subscribe') }}</v-btn>
               </div>
             </v-col>
             <v-col cols="12" align="center">

@@ -3,9 +3,13 @@ import config from './config.js'
 
 export default {
   env: { config },
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  ssr: false,
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  generate: {
+    fallback: true,
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - starter',
@@ -66,10 +70,11 @@ export default {
     host: '0.0.0.0', //  default: localhost
   },
   // Customize the progress-bar color (https://nuxtjs.org/api/configuration-loading/#customizing-the-progress-bar)
-  loading: {
-    color: config.theme.themes.light.primary,
-    continuous: true,
-  }, // Customize the loading indicator (https://nuxtjs.org/api/configuration-loading-indicator)
+  /*   loading: {
+    color: 'black',
+    height: '10px',
+    duration: 500,
+  }, */ // Customize the loading indicator (https://nuxtjs.org/api/configuration-loading-indicator)
   loadingIndicator: {
     name: '~/assets/loader.html',
     color: config.theme.themes.light.primary,
@@ -85,6 +90,7 @@ export default {
     { src: '~plugins/i18n-config.js', mode: 'client' },
     { src: '~/plugins/vuetify-theme', mode: 'client' },
     { src: '~/plugins/apollo-config', mode: 'client' },
+    /*  { src: '~/plugins/loader', mode: 'client' }, */
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -132,6 +138,8 @@ export default {
     'nuxt-webfontloader',
     // https://image.nuxtjs.org/getting-started/installation
     '@nuxt/image',
+    // https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -164,30 +172,14 @@ export default {
     },
     domains: [
       'picsum.photos',
-      'strapi.nuxtjs.org',
-      'tailwindcss.nuxtjs.org',
-      'storybook.nuxtjs.org',
-      'firebase.nuxtjs.org',
-      'pwa.nuxtjs.org',
-      'image.nuxtjs.org',
-      'http.nuxtjs.org',
-      'cloudinary.nuxtjs.org',
-      'i18n.nuxtjs.org',
-      'snipcart.nuxtjs.org',
-      'prismic.nuxtjs.org',
-      'google-analytics.nuxtjs.org',
-      'color-mode.nuxtjs.org',
-      'mdx.nuxtjs.org',
-      'sanity.nuxtjs.org',
-      'speedcurve.nuxtjs.org',
-      'pbs.twimg.com',
+      // snipcart.nuxtjs.org',
       'source.unsplash.com',
       'images.unsplash.com',
       'github.com',
       'unsplash.com',
       'user-images.githubusercontent.com',
       'abs.twimg.com',
-      'https://res.cloudinary.com/nuxt/',
+      'res.cloudinary.com',
       'npmjs.com',
     ],
   },
@@ -303,7 +295,10 @@ export default {
     },
     icon: {},
   },
-
+  // https://github.com/nuxt-community/style-resources-module
+  styleResources: {
+    scss: ['~/assets/variables.scss', '~/assets/mixins.scss'],
+  },
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
 
