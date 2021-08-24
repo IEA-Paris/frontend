@@ -3,11 +3,12 @@
     <div class="overlay">
       <div class="top">
         <div class="d-flex">
-          <v-chip v-for="(tag, index) in tags" :key="index" :color="tag.color" label>
-            {{ $t(tag.text) }}
-          </v-chip>
+          <template v-for="(tag, index) in tags">
+            <v-chip :key="index" :color="tag.color" label>
+              {{ $t(tag.text) }}
+            </v-chip>
+          </template>
         </div>
-
         <span id="caption-content">
           <slot name="caption"></slot>
           <br />
@@ -16,8 +17,8 @@
           <slot name="author"></slot>
         </span>
       </div>
-      <div class="bottom">
-        <span v-if="tags.find((tag) => tag.text === 'event')" id="caption-date">
+      <div v-if="tags.find((tag) => tag.text === 'event')" class="bottom">
+        <span id="caption-date">
           <slot name="date"></slot>
         </span>
       </div>
@@ -43,7 +44,7 @@ export default {
     },
     tags: {
       type: Array,
-      default: () => [],
+      required: true,
     },
     expanded: {
       type: Boolean,
@@ -61,6 +62,9 @@ export default {
         },
       })
     },
+  },
+  mounted() {
+    console.log(this.tags)
   },
 }
 </script>
