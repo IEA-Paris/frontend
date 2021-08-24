@@ -43,7 +43,7 @@ export default {
       default: () => {
         const rnd = Math.floor(Math.random() * (100 + 1))
         return {
-          image: 'https://picsum.photos/seed/' + Math.random() * 20 + '/600/400',
+          image: 'https://picsum.photos/seed/test/600/400',
           title: quotes[rnd].quote,
           author: quotes[rnd].author,
           tags: [

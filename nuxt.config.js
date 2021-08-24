@@ -3,7 +3,7 @@ import config from './config.js'
 export default {
   env: { config },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  /*   ssr: false, */
+  /* ssr: false, */
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
