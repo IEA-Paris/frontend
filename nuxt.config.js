@@ -107,7 +107,7 @@ export default {
     '@nuxtjs/vuetify',
     // https://composition-api.nuxtjs.org
     '@nuxtjs/composition-api/module',
-    '@nuxtjs/html-validator',
+    /* '@nuxtjs/html-validator', */
     '@nuxt/image',
     'nuxt-compress',
   ],
