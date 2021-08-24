@@ -164,7 +164,7 @@ export default {
       blogImage: 864,
     },
     domains: [
-      'picsum.photos',
+      /* 'picsum.photos', */
       // snipcart.nuxtjs.org',
       'source.unsplash.com',
       'images.unsplash.com',
