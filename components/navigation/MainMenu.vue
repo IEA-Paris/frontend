@@ -39,7 +39,7 @@
           <v-divider style="border-color: white"></v-divider>
           <!-- INSTITUTE -->
           <v-list dark color="black">
-            <v-list-group :value="$route.name.startsWith('institute') ? true : false">
+            <v-list-group :value="$route.name && $route.name.startsWith('institute') ? true : false">
               <template #activator>
                 <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6">{{ $t('institute') }}</v-list-item-title>
               </template>
@@ -56,7 +56,7 @@
             </v-list-group>
             <v-divider></v-divider>
             <!-- RESEARCH -->
-            <v-list-group :value="$route.name.startsWith('research') ? true : false">
+            <v-list-group :value="$route.name && $route.name.startsWith('research') ? true : false">
               <template #activator>
                 <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6">{{ $t('research') }}</v-list-item-title>
               </template>
@@ -83,7 +83,7 @@
             </v-list-item>
             <v-divider></v-divider>
             <!-- APPLY -->
-            <v-list-group :value="$route.name.startsWith('apply') ? true : false">
+            <v-list-group :value="$route.name && $route.name.startsWith('apply') ? true : false">
               <template #activator>
                 <v-list-item-title class="text-uppercase text-h5 mt-3 mb-6">{{ $t('apply') }}</v-list-item-title>
               </template>

@@ -3,9 +3,12 @@ import config from './config.js'
 export default {
   env: { config },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+  /*   ssr: false, */
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  router: {
+    base: '/frontend/',
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - starter',
@@ -164,16 +167,9 @@ export default {
       blogImage: 864,
     },
     domains: [
-      /* 'picsum.photos', */
+      'https://picsum.photos',
       // snipcart.nuxtjs.org',
       'source.unsplash.com',
-      'images.unsplash.com',
-      'github.com',
-      'unsplash.com',
-      'user-images.githubusercontent.com',
-      'abs.twimg.com',
-      'res.cloudinary.com',
-      'npmjs.com',
     ],
   },
   // https://i18n.nuxtjs.org/
