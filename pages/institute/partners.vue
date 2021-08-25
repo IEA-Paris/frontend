@@ -1,5 +1,6 @@
 <template>
   <div>
+    <PageTitle text="partners" />
     <Section title="latest" />
   </div>
 </template>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <PageTitle text="mission" />
     <Section title="latest" />
   </div>
 </template>

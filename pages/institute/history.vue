@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Section title="latest" />
+    <PageTitle text="history" />
+    <Section title="history" />
   </div>
 </template>
 <script>

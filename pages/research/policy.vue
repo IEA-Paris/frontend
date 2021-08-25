@@ -1,5 +1,6 @@
 <template>
   <div>
+    <PageTitle text="policy" />
     <Section title="latest" />
   </div>
 </template>

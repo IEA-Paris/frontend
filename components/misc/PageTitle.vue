@@ -1,9 +1,5 @@
 <template>
-  <div class="text-h3 text-center my-12">
-    <v-responsive class="mx-auto my-3" width="56">
-      <v-divider class="mb-1" />
-      <v-divider />
-    </v-responsive>
+  <div class="page-title text-center my-12">
     {{ $t(text) }}
     <v-responsive class="mx-auto my-3" width="56">
       <v-divider class="mb-1" />
@@ -27,4 +23,9 @@ export default {
   methods: {},
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.page-title {
+  font-family: 'Bodonis Moda';
+  font-size: 4rem;
+}
+</style>

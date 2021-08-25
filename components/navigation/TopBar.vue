@@ -68,7 +68,7 @@
         <v-btn text nuxt to="/library">{{ $t('library') }}</v-btn>
         <v-menu offset-y open-on-hover bottom>
           <template #activator="{ on, attrs }">
-            <v-btn v-bind="attrs" text v-on="on">
+            <v-btn v-bind="attrs" text nuxt to="/apply" v-on="on">
               {{ $t('apply') }}
               <v-icon right>mdi-chevron-down</v-icon>
             </v-btn>

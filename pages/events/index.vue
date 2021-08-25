@@ -1,5 +1,6 @@
 <template>
   <div>
+    <PageTitle text="events" />
     <Section title="latest" />
   </div>
 </template>

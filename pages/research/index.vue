@@ -1,5 +1,6 @@
 <template>
   <div>
+    <PageTitle text="research" />
     <Section title="latest" />
   </div>
 </template>
