@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-scroll="onScroll">
     <Section title="latest" />
     <Section title="events" alt />
     <Section title="research" />
@@ -14,6 +14,16 @@ export default {
     return {
       article,
     }
+  },
+  data() {
+    return {
+      scrolled: false,
+    }
+  },
+  methods: {
+    onScroll() {
+      this.$store.commit('setScrolled')
+    },
   },
 }
 </script>

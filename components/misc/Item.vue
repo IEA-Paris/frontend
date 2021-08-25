@@ -46,7 +46,7 @@ export default {
           image: 'https://picsum.photos/seed/' + Math.floor(Math.random() * 10) + 1 + '/600/400',
           title: quotes[rnd].quote,
           author: quotes[rnd].author,
-          tags: [tags[2]],
+          tags: [tags[1], tags[0]],
           date: 'Tue 8, May 22',
         }
       },

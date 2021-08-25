@@ -1,15 +1,23 @@
 <template>
   <div>
-    <v-container v-scroll="onScroll" class="transition-swing" :fluid="!scrolled" :class="{ scrolled: 'mt-14' }">
-      <v-row class="transition-swing" :no-gutters="!scrolled" :class="scrolled ? '' : 'mx-12'">
+    <v-container class="transition-swing" :fluid="!$store.state.scrolled">
+      <v-row
+        class="transition-swing"
+        :no-gutters="!$store.state.scrolled"
+        :class="$store.state.scrolled ? '' : 'mx-12'"
+      >
         <SectionTitle :text="title" />
       </v-row>
-      <v-row class="transition-swing" :no-gutters="!scrolled" :class="scrolled ? '' : 'mx-12'">
+      <v-row
+        class="transition-swing"
+        :no-gutters="!$store.state.scrolled"
+        :class="$store.state.scrolled ? '' : 'mx-12'"
+      >
         <v-col cols="12" md="6" xl="4" class="transition-swing" :order="alt ? 'last' : 'first'">
-          <Item :first="true" :scroll="scrolled" />
+          <Item :first="true" :scroll="$store.state.scrolled" />
         </v-col>
         <v-col cols="12" md="6" xl="4">
-          <v-row :no-gutters="!scrolled">
+          <v-row :no-gutters="!$store.state.scrolled">
             <v-col cols="12" class="transition-swing">
               <Item />
             </v-col>
@@ -19,7 +27,7 @@
           </v-row>
         </v-col>
         <v-col v-if="$vuetify.breakpoint.xl" cols="12" md="6" xl="4">
-          <v-row :no-gutters="!scrolled">
+          <v-row :no-gutters="!$store.state.scrolled">
             <v-col cols="12" class="transition-swing">
               <Item />
             </v-col>
@@ -51,11 +59,7 @@ export default {
   },
   computed: {},
   mounted() {},
-  methods: {
-    onScroll() {
-      this.scrolled = window.pageYOffset > 0
-    },
-  },
+  methods: {},
 }
 </script>
 <style lang="scss"></style>

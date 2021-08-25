@@ -63,9 +63,7 @@ export default {
       })
     },
   },
-  mounted() {
-    console.log(this.tags)
-  },
+  mounted() {},
 }
 </script>
 <style scoped>

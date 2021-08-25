@@ -6,14 +6,10 @@
     </template>
     <!-- APP BAR WITH LOGO -->
     <v-card dark color="black">
-      <v-app-bar color="transparent" clipped flat hide-on-scroll height="147px">
+      <v-app-bar color="transparent" clipped flat hide-on-scroll :height="!$store.state.scrolled ? '180' : '120'">
         <div class="d-flex flex-column flex-grow-1">
           <div class="d-flex flex-grow-1 align-center">
-            <nuxt-link :to="localePath('/')" class="d-flex align-center menu-logo-text" @click.native="open = false">
-              <span class="menu-logo-1">PARIS</span>
-              &nbsp;&nbsp;
-              <span class="menu-logo-2">IAS</span>
-            </nuxt-link>
+            <Logo color="#FFF" />
             <v-spacer></v-spacer>
             <v-btn icon x-large class="ma-2 mr-4 mb-4" @click="open = false"><v-icon>mdi-close</v-icon></v-btn>
           </div>
@@ -172,7 +168,7 @@ export default {
   line-height: 6rem;
   color: white;
   text-decoration: none;
-  margin-top: 1.4rem;
+  margin-top: 1rem;
   margin-bottom: 1.8rem;
   margin-left: 2.4rem;
 }
