@@ -128,21 +128,14 @@ export default {
   padding: 4px;
   color: white;
   background-image: linear-gradient(to left, black 100%, white 100%);
-  font-size: 0.8rem;
   line-height: 2.2rem;
   text-shadow: 1px 1px 0 alpha(black, 0.6);
 }
 .overlay:hover #caption-content {
-  color: white;
-  background-position: 200%;
-  background-color: black;
   line-height: 2.2rem;
   font-size: 1.3rem;
 }
 .overlay:hover #caption-author {
-  color: black;
-  background-position: 200%;
-  background-color: white;
 }
 #caption-date {
   padding: 4px;

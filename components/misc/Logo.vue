@@ -80,14 +80,14 @@ export default {
   margin-left: 2.4rem;
 }
 
-.logo-1 {
+.logo-2 {
   font-size: 6rem;
   font-weight: 500;
   font-family: 'Bodonis Moda';
   letter-spacing: 0.2px;
 }
 
-.logo-2 {
+.logo-1 {
   font-size: 6.5rem;
   font-family: 'Roboto';
   font-weight: 100;

@@ -1,7 +1,6 @@
 <template>
   <div>
     <PageTitle text="library" />
-    <Section title="latest" />
   </div>
 </template>
 <script>
