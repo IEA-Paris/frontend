@@ -56,7 +56,7 @@ export default {
     console.log('menu', this.color)
   },
   updated() {
-    console.log('logo', ['', '/icon.png', ''][this.$store.state.logo])
+    console.log('logo', this.$store.state.logo)
   },
   methods: {},
 }
