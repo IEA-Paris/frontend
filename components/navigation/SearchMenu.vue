@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="open" fullscreen hide-overlay>
     <template #activator="{ on, attrs }">
-      <v-btn v-bind="attrs" icon x-large v-on="on"><v-icon>mdi-magnify</v-icon></v-btn>
+      <v-btn v-bind="attrs" icon x-large class="ma-2" tile v-on="on"><v-icon>mdi-magnify</v-icon></v-btn>
     </template>
     <v-card dark>
       <v-app-bar color="transparent" clipped flat app prominent hide-on-scroll height="168px">

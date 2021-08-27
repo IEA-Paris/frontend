@@ -7,9 +7,37 @@
     :color="color"
     @click.native="$vuetify.goTo(0)"
   >
-    <span class="logo-1">PARIS</span>
+    <v-img
+      v-if="[1, 6].includes($store.state.logo)"
+      class="mx-2 logo-image"
+      src="/icon.png"
+      :class="{ scrolled: $store.state.scrolled }"
+      contain
+    ></v-img>
+    <v-img
+      v-if="$store.state.logo === 2"
+      class="mx-2 logo-image"
+      src="/logo_bn.png"
+      :class="{ scrolled: $store.state.scrolled }"
+      contain
+    ></v-img>
+    <v-img
+      v-if="[3, 5].includes($store.state.logo)"
+      class="mx-2 logo-image"
+      src="/logo_bni.png"
+      :class="{ scrolled: $store.state.scrolled }"
+      contain
+    ></v-img>
+    <v-img
+      v-if="$store.state.logo === 4"
+      class="mx-2 logo-image2"
+      src="/bridge.png"
+      :class="{ scrolled: $store.state.scrolled }"
+      contain
+    ></v-img>
+    <span v-if="![5, 6].includes($store.state.logo)" class="logo-1">PARIS</span>
     &nbsp;&nbsp;
-    <span class="logo-2">IAS</span>
+    <span v-if="![5, 6].includes($store.state.logo)" class="logo-2">IAS</span>
   </nuxt-link>
 </template>
 <script>
@@ -26,6 +54,9 @@ export default {
   computed: {},
   mounted() {
     console.log('menu', this.color)
+  },
+  updated() {
+    console.log('logo', ['', '/icon.png', ''][this.$store.state.logo])
   },
   methods: {},
 }
@@ -60,7 +91,6 @@ export default {
   margin-top: 5px;
 }
 
-.logo-text,
 .logo-text:link,
 .logo-text:visited,
 .logo-text:hover,
@@ -92,7 +122,15 @@ export default {
   font-family: 'Roboto';
   font-weight: 100;
 }
-
+.logo-image {
+  max-height: 100px;
+  max-width: 100px;
+}
+.logo-image2 {
+  max-height: 150px;
+  max-width: 200px;
+  margin-top: -40px;
+}
 .scrolled.logo-text {
   line-height: 3rem;
   color: var(--color);
@@ -101,16 +139,25 @@ export default {
   margin-bottom: 0.8rem;
 }
 
-.scrolled .logo-1 {
+.scrolled .logo-2 {
   font-size: 3rem !important;
   font-weight: 700;
   font-family: 'Bodoni Moda';
   letter-spacing: 0.2px;
 }
 
-.scrolled .logo-2 {
+.scrolled .logo-1 {
   font-size: 3.2rem !important;
   font-family: 'Roboto';
   font-weight: 100;
+}
+.scrolled .logo-image {
+  max-height: 50px;
+  max-width: 50px;
+}
+.scrolled .logo-image2 {
+  max-height: 50px;
+  max-width: 150px;
+  margin-top: -20px;
 }
 </style>

@@ -132,8 +132,8 @@ export default {
   text-shadow: 1px 1px 0 alpha(black, 0.6);
 }
 .overlay:hover #caption-content {
-  line-height: 2.2rem;
-  font-size: 1.3rem;
+  /*   line-height: 2.2rem;
+  font-size: 1.3rem; */
 }
 .overlay:hover #caption-author {
 }
