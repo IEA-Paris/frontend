@@ -10,28 +10,28 @@
     <v-img
       v-if="[1, 6].includes($store.state.logo)"
       class="mx-2 logo-image"
-      src="/icon.png"
+      src="/frontend/icon.png"
       :class="{ scrolled: $store.state.scrolled }"
       contain
     ></v-img>
     <v-img
       v-if="$store.state.logo === 2"
       class="mx-2 logo-image"
-      src="/logo_bn.png"
+      src="/frontend/logo_bn.png"
       :class="{ scrolled: $store.state.scrolled }"
       contain
     ></v-img>
     <v-img
       v-if="[3, 5].includes($store.state.logo)"
       class="mx-2 logo-image"
-      src="/logo_bni.png"
+      src="/frontend/logo_bni.png"
       :class="{ scrolled: $store.state.scrolled }"
       contain
     ></v-img>
     <v-img
       v-if="$store.state.logo === 4"
       class="mx-2 logo-image2"
-      src="/bridge.png"
+      src="/frontend/bridge.png"
       :class="{ scrolled: $store.state.scrolled }"
       contain
     ></v-img>
