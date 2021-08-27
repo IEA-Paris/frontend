@@ -111,7 +111,7 @@ export default {
 }
 
 .logo-2 {
-  font-size: 6rem;
+  font-size: 6.2rem;
   font-weight: 500;
   font-family: 'Bodonis Moda';
   letter-spacing: 0.2px;
@@ -129,7 +129,6 @@ export default {
 .logo-image2 {
   max-height: 150px;
   max-width: 200px;
-  margin-top: -40px;
 }
 .scrolled.logo-text {
   line-height: 3rem;
@@ -147,7 +146,7 @@ export default {
 }
 
 .scrolled .logo-1 {
-  font-size: 3.2rem !important;
+  font-size: 3.3rem !important;
   font-family: 'Roboto';
   font-weight: 100;
 }
@@ -158,6 +157,5 @@ export default {
 .scrolled .logo-image2 {
   max-height: 50px;
   max-width: 150px;
-  margin-top: -20px;
 }
 </style>
