@@ -128,7 +128,8 @@ export default {
 }
 .logo-image2 {
   max-height: 150px;
-  max-width: 200px;
+  max-width: 180px;
+  margin-top: -8px;
 }
 .scrolled.logo-text {
   line-height: 3rem;
@@ -157,5 +158,6 @@ export default {
 .scrolled .logo-image2 {
   max-height: 50px;
   max-width: 150px;
+  margin-top: -2px;
 }
 </style>
