@@ -38,6 +38,9 @@
       <v-list-item @click="$store.commit('setLogo', 6)">
         <v-list-item-title class="text-uppercase text-button">Sans texte / Logo original</v-list-item-title>
       </v-list-item>
+      <v-list-item @click="$store.commit('setLogo', 7)">
+        <v-list-item-title class="text-uppercase text-button">Sans texte / Logo original</v-list-item-title>
+      </v-list-item>
     </v-list>
   </v-menu>
 </template>

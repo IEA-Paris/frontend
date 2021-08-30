@@ -1,5 +1,6 @@
 <template>
   <div>
+    <LogoAnimated />
     <PageTitle text="contact" />
     <Section title="latest" />
   </div>

@@ -35,12 +35,43 @@
       :class="{ scrolled: $store.state.scrolled }"
       contain
     ></v-img>
-    <span v-if="![5, 6].includes($store.state.logo)" class="logo-1">PARIS</span>
+    <v-img
+      v-if="$store.state.logo === 7"
+      class="mx-2 logo-image2"
+      src="/frontend/carre.png"
+      :class="{ scrolled: $store.state.scrolled }"
+      contain
+    ></v-img>
+    <span v-if="![5, 6].includes($store.state.logo)" ref="text1" class="logo-1">
+      {{ $i18n.locale === 'en' ? 'PARIS' : 'IEA' }}
+    </span>
     &nbsp;&nbsp;
-    <span v-if="![5, 6].includes($store.state.logo)" class="logo-2">IAS</span>
+    <span v-if="![5, 6].includes($store.state.logo)" ref="text2" class="logo-2">
+      {{ $i18n.locale === 'en' ? 'IAS' : 'PARIS' }}
+    </span>
+    <svg id="filters">
+      <defs>
+        <filter id="threshold">
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="1 0 0 0 0
+									0 1 0 0 0
+									0 0 1 0 0
+									0 0 0 255 -140"
+          />
+        </filter>
+      </defs>
+    </svg>
   </nuxt-link>
 </template>
 <script>
+const morphTime = 1
+const cooldownTime = 0.25
+const time = new Date()
+const morph = 0
+const cooldown = cooldownTime
+const texts = ['PARISIAS', 'IEAPARIS']
 export default {
   props: {
     color: {
@@ -52,12 +83,7 @@ export default {
     return {}
   },
   computed: {},
-  mounted() {
-    console.log('menu', this.color)
-  },
-  updated() {
-    console.log('logo', this.$store.state.logo)
-  },
+  mounted() {},
   methods: {},
 }
 </script>
@@ -108,6 +134,7 @@ export default {
   margin-top: 1.4rem;
   margin-bottom: 1.2rem;
   margin-left: 2.4rem;
+  filter: url(#threshold);
 }
 
 .logo-2 {
