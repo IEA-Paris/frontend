@@ -37,41 +37,24 @@
     ></v-img>
     <v-img
       v-if="$store.state.logo === 7"
-      class="mx-2 logo-image2"
-      src="/frontend/carre.png"
+      class="logo-image"
+      src="/carre.svg"
       :class="{ scrolled: $store.state.scrolled }"
       contain
     ></v-img>
-    <span v-if="![5, 6].includes($store.state.logo)" ref="text1" class="logo-1">
+    <span v-if="![5, 6, 7].includes($store.state.logo)" ref="text1" class="logo-1">
       {{ $i18n.locale === 'en' ? 'PARIS' : 'IEA' }}
     </span>
     &nbsp;&nbsp;
-    <span v-if="![5, 6].includes($store.state.logo)" ref="text2" class="logo-2">
+    <span v-if="![5, 6, 7].includes($store.state.logo)" ref="text2" class="logo-2">
       {{ $i18n.locale === 'en' ? 'IAS' : 'PARIS' }}
     </span>
-    <svg id="filters">
-      <defs>
-        <filter id="threshold">
-          <feColorMatrix
-            in="SourceGraphic"
-            type="matrix"
-            values="1 0 0 0 0
-									0 1 0 0 0
-									0 0 1 0 0
-									0 0 0 255 -140"
-          />
-        </filter>
-      </defs>
-    </svg>
+    <span v-if="$store.state.logo === 7" ref="text2" class="logo-3">
+      {{ $i18n.locale === 'en' ? 'Paris Institute for Advanced Studies' : "Institut d'études avancées de Paris" }}
+    </span>
   </nuxt-link>
 </template>
 <script>
-const morphTime = 1
-const cooldownTime = 0.25
-const time = new Date()
-const morph = 0
-const cooldown = cooldownTime
-const texts = ['PARISIAS', 'IEAPARIS']
 export default {
   props: {
     color: {
@@ -124,7 +107,7 @@ export default {
 .logo-text {
   transition: all 0.5s ease;
   transform-origin: left top;
-  max-width: 600px !important;
+  max-width: 800px !important;
   width: 100%;
   margin-left: 40px;
   margin-bottom: 25px;
@@ -134,7 +117,6 @@ export default {
   margin-top: 1.4rem;
   margin-bottom: 1.2rem;
   margin-left: 2.4rem;
-  filter: url(#threshold);
 }
 
 .logo-2 {
@@ -149,9 +131,21 @@ export default {
   font-family: 'Roboto';
   font-weight: 100;
 }
+.logo-3 {
+  font-size: 3.2rem;
+  font-family: 'Roboto';
+  font-weight: 300;
+  transition: all 0.5s ease;
+  transform-origin: left top;
+  margin-left: 20px;
+  line-height: 3.2rem;
+  color: var(--color);
+  text-decoration: none;
+  text-transform: uppercase;
+}
 .logo-image {
-  max-height: 100px;
-  max-width: 100px;
+  max-height: 150px;
+  max-width: 150px;
 }
 .logo-image2 {
   max-height: 150px;
